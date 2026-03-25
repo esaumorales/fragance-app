@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: "Encuentra tu aroma ideal. Perfumes exclusivos para resaltar tu estilo y presencia.",
 };
 
+import { CartProvider } from "@/context/CartContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable} h-full antialiased dark`}>
       <body className="min-h-full flex flex-col bg-background text-zinc-100 font-sans selection:bg-primary selection:text-background">
-        {children}
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

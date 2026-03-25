@@ -1,9 +1,18 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { useCart } from "@/context/CartContext";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const { totalItems } = useCart();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-800 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -14,7 +23,7 @@ export default function Navbar() {
 
         {/* Logo - Center (Mobile) / Left (Desktop) */}
         <Link href="/" className="flex-1 md:flex-none flex justify-center md:justify-start">
-          <img src="/images/logo-leon.png" alt="Lyon Call" className="h-[3.25rem] w-auto mix-blend-screen" />
+          <img src="/images/logo-leon.png" alt="Lyon Call" className="h-13 w-auto mix-blend-screen" />
         </Link>
 
         {/* Desktop Navigation - Center */}
@@ -31,9 +40,11 @@ export default function Navbar() {
           </Link>
           <Link href="/carrito" className="p-2 text-zinc-300 hover:text-primary transition-colors relative">
             <Icon icon="lucide:shopping-bag" width={20} />
-            <span className="absolute top-1 right-1 bg-primary text-background text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
-              0
-            </span>
+            {mounted && totalItems > 0 && (
+              <span className="absolute top-1 right-1 bg-primary text-background text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                {totalItems}
+              </span>
+            )}
           </Link>
         </div>
       </div>

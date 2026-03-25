@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { createClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
+import AddToCartButton from "@/components/cart/AddToCartButton";
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -44,7 +45,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           
           {/* FOTOS */}
           <div className="space-y-4">
-            <div className="relative aspect-4/5 w-full bg-card overflow-hidden group">
+            <div className="relative aspect-4/5 w-full bg-white overflow-hidden group rounded-sm">
               {product.featured && (
                 <div className="absolute top-4 left-4 z-10 bg-primary text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
                   Featured
@@ -54,7 +55,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 src={mainImage}
                 alt={product.name}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-contain p-8"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
@@ -94,12 +95,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                className="flex-1 bg-white text-black py-4 uppercase tracking-widest text-xs font-bold hover:bg-primary hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={product.stock <= 0}
-              >
-                {product.stock > 0 ? 'Añadir al Carrito' : 'Agotado'}
-              </button>
+              <AddToCartButton product={{...product, image: mainImage}} />
               
               <button className="flex items-center justify-center p-4 border border-zinc-800 hover:border-primary hover:text-primary transition-colors group">
                 <Icon icon="lucide:heart" width={20} className="group-hover:scale-110 transition-transform" />
