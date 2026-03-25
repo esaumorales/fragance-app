@@ -28,8 +28,7 @@ export default async function CatalogoPage({ searchParams }: { searchParams: Pro
     .eq('active', true);
 
   if (activeCategory !== "todos") {
-    // Note: Assuming gender column is mapped to 'hombre', 'mujer', 'unisex'
-    query = query.eq('gender', activeCategory === 'hombre' ? 'men' : activeCategory === 'mujer' ? 'women' : 'unisex');
+    query = query.eq('gender', activeCategory === 'hombre' ? 'men' : 'women');
   }
 
   const { data: dbProducts, error } = await query;
@@ -39,14 +38,14 @@ export default async function CatalogoPage({ searchParams }: { searchParams: Pro
     id: p.id,
     slug: p.slug,
     name: p.name,
-    brand: p.brands?.name || 'AURA Exclusive',
+    brand: p.brands?.name || 'Lyon Call Exclusive',
     price: p.price,
     image: p.product_images?.[0]?.image_url || 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80',
     isNew: p.isNew
   }));
 
   return (
-    <div className="bg-[#0f0f0f] text-zinc-100 min-h-screen pt-8 pb-24">
+    <div className="bg-background text-zinc-100 min-h-screen pt-8 pb-24">
       
       {/* HEADER CATÁLOGO */}
       <div className="container mx-auto px-4 mb-12">
@@ -69,11 +68,11 @@ export default async function CatalogoPage({ searchParams }: { searchParams: Pro
             <div className="mb-8">
               <h3 className="uppercase text-xs tracking-widest text-zinc-500 font-bold mb-4">Categoría</h3>
               <ul className="space-y-3 font-light text-sm max-w-[200px]">
-                {["todos", "hombre", "mujer", "unisex"].map(cat => (
+                {["todos", "hombre", "mujer"].map(cat => (
                   <li key={cat}>
                     <a 
                       href={`/perfumes?category=${cat}`}
-                      className={`flex capitalize items-center justify-between w-full hover:text-[#d4af37] transition-colors ${activeCategory === cat ? "text-[#d4af37] font-medium" : "text-zinc-300"}`}
+                      className={`flex capitalize items-center justify-between w-full hover:text-primary transition-colors ${activeCategory === cat ? "text-primary font-medium" : "text-zinc-300"}`}
                     >
                       <span>{cat}</span>
                     </a>

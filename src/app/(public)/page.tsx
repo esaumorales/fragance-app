@@ -32,7 +32,7 @@ export default function Home() {
           id: p.id,
           name: p.name,
           slug: p.slug,
-          brand: p.brands?.name || 'AURA Exclusive',
+          brand: p.brands?.name || 'Lyon Call Exclusive',
           price: p.price,
           image: p.product_images?.find((img: any) => img.is_main)?.image_url || p.product_images?.[0]?.image_url || 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80'
         }));
@@ -50,23 +50,22 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col w-full overflow-hidden bg-[#0f0f0f] text-zinc-100">
+    <div className="flex flex-col w-full overflow-hidden bg-background text-zinc-100">
       
       {/* 1. HERO SECTION */}
       <section className="relative w-full h-[85vh] flex items-center justify-center">
-        {/* Usamos un div con background en lugar de next/image para mayor simpleza en el snippet, 
-            pero idealmente con next/image y objectFit cover. */}
+        {/* Background León */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1615486511484-92e172fc34ea?auto=format&fit=crop&q=80')" }}
+          className="absolute inset-0 z-0 bg-cover bg-[center_top] bg-no-repeat opacity-40 mix-blend-screen"
+          style={{ backgroundImage: "url('/images/Fondo-leon.jpeg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-0" />
         
         <motion.div 
           className="relative z-10 flex flex-col items-center text-center px-4 max-w-3xl"
           {...fadeIn}
         >
-          <span className="text-[#d4af37] text-sm uppercase tracking-[0.3em] font-semibold mb-6">Colección 2026</span>
+          <span className="text-primary text-sm uppercase tracking-[0.3em] font-semibold mb-6">Colección 2026</span>
           <h1 className="font-playfair text-5xl md:text-7xl font-bold leading-tight mb-6">
             Encuentra tu <br/><span className="italic font-light">aroma ideal</span>
           </h1>
@@ -75,7 +74,7 @@ export default function Home() {
           </p>
           <Link 
             href="/perfumes" 
-            className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-black text-sm uppercase tracking-widest font-semibold overflow-hidden transition-all hover:bg-[#d4af37] hover:text-white"
+            className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-black text-sm uppercase tracking-widest font-semibold overflow-hidden transition-all hover:bg-primary hover:text-white"
           >
             Explorar Perfumes
           </Link>
@@ -83,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* 2. CATEGORÍAS */}
-      <section className="py-24 px-4 bg-[#141414]">
+      <section className="py-24 px-4 bg-card">
         <div className="container mx-auto">
           <motion.div 
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
@@ -91,8 +90,7 @@ export default function Home() {
           >
             {[
               { title: "Hombre", image: "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&q=80" },
-              { title: "Mujer", image: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80" },
-              { title: "Unisex", image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80" }
+              { title: "Mujer", image: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80" }
             ].map((cat, idx) => (
               <Link href={`/perfumes?category=${cat.title.toLowerCase()}`} key={idx} className="relative group overflow-hidden h-96 flex-1 flex items-center justify-center">
                 <div 
@@ -111,7 +109,7 @@ export default function Home() {
       <section className="py-24 px-4 container mx-auto" id="featured">
         <div className="flex flex-col items-center mb-16">
           <h2 className="font-playfair text-4xl font-bold mb-4">Favoritos del Mes</h2>
-          <div className="w-12 h-0.5 bg-[#d4af37]" />
+          <div className="w-12 h-0.5 bg-primary" />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -124,20 +122,20 @@ export default function Home() {
               transition={{ delay: idx * 0.1 }}
               className="group cursor-pointer flex flex-col"
             >
-              <Link href={`/perfumes/${product.slug}`} className="relative aspect-[3/4] overflow-hidden bg-[#1a1a1a] mb-6 block">
+              <Link href={`/perfumes/${product.slug}`} className="relative aspect-[3/4] overflow-hidden bg-muted mb-6 block">
                 <img 
                   src={product.image} 
                   alt={product.name}
                   className="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
                 />
                 <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="w-full bg-white text-black uppercase text-xs tracking-widest font-bold py-3 hover:bg-[#d4af37] hover:text-white transition-colors">
+                  <button className="w-full bg-white text-black uppercase text-xs tracking-widest font-bold py-3 hover:bg-primary hover:text-white transition-colors">
                     Ver Detalles
                   </button>
                 </div>
               </Link>
               <div className="text-center">
-                <p className="text-[#d4af37] text-xs uppercase tracking-widest mb-1">{product.brand}</p>
+                <p className="text-primary text-xs uppercase tracking-widest mb-1">{product.brand}</p>
                 <h3 className="font-playfair text-xl mb-2">{product.name}</h3>
                 <p className="text-zinc-400 font-light">${product.price.toFixed(2)}</p>
               </div>
@@ -152,14 +150,14 @@ export default function Home() {
         </div>
         
         <div className="flex justify-center mt-16">
-          <Link href="/perfumes" className="border border-zinc-700 px-8 py-3 text-sm uppercase tracking-widest font-medium hover:border-[#d4af37] hover:text-[#d4af37] transition-colors">
+          <Link href="/perfumes" className="border border-zinc-700 px-8 py-3 text-sm uppercase tracking-widest font-medium hover:border-primary hover:text-primary transition-colors">
             Ver Colección Completa
           </Link>
         </div>
       </section>
 
       {/* 4. BENEFICIOS */}
-      <section className="py-20 border-t border-zinc-800 bg-[#0f0f0f]">
+      <section className="py-20 border-t border-zinc-800 bg-background">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
             { icon: "lucide:award", title: "100% Originales", desc: "Garantizamos la autenticidad de cada frasco que llega a tus manos." },
@@ -169,9 +167,9 @@ export default function Home() {
             <motion.div 
               key={idx} 
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              className="flex flex-col items-center text-center p-6 border border-zinc-800/50 hover:border-[#d4af37]/50 transition-colors"
+              className="flex flex-col items-center text-center p-6 border border-zinc-800/50 hover:border-primary/50 transition-colors"
             >
-              <Icon icon={benefit.icon} className="text-[#d4af37] mb-6" width={32} />
+              <Icon icon={benefit.icon} className="text-primary mb-6" width={32} />
               <h3 className="font-playfair text-xl mb-3">{benefit.title}</h3>
               <p className="text-zinc-400 font-light text-sm">{benefit.desc}</p>
             </motion.div>

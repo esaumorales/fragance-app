@@ -24,10 +24,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   }
 
   const mainImage = product.product_images?.find((img: any) => img.is_main)?.image_url || product.product_images?.[0]?.image_url || 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80';
-  const brandName = product.brands?.name || 'AURA Exclusive';
+  const brandName = product.brands?.name || 'Lyon Call Exclusive';
 
   return (
-    <div className="bg-[#0f0f0f] text-zinc-100 min-h-screen pb-24">
+    <div className="bg-background text-zinc-100 min-h-screen pb-24">
       {/* HEADER BREADCRUMB */}
       <div className="border-b border-zinc-800">
         <div className="container mx-auto px-4 py-4 flex items-center text-xs font-light text-zinc-500 uppercase tracking-widest">
@@ -44,9 +44,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           
           {/* FOTOS */}
           <div className="space-y-4">
-            <div className="relative aspect-4/5 w-full bg-[#141414] overflow-hidden group">
+            <div className="relative aspect-4/5 w-full bg-card overflow-hidden group">
               {product.featured && (
-                <div className="absolute top-4 left-4 z-10 bg-[#d4af37] text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+                <div className="absolute top-4 left-4 z-10 bg-primary text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
                   Featured
                 </div>
               )}
@@ -64,7 +64,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           {/* DETALLES */}
           <div className="flex flex-col justify-center">
             
-            <p className="uppercase tracking-[0.2em] font-bold text-xs text-[#d4af37] mb-4">
+            <p className="uppercase tracking-[0.2em] font-bold text-xs text-primary mb-4">
               {brandName}
             </p>
             
@@ -95,13 +95,13 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                className="flex-1 bg-white text-black py-4 uppercase tracking-widest text-xs font-bold hover:bg-[#d4af37] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 bg-white text-black py-4 uppercase tracking-widest text-xs font-bold hover:bg-primary hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={product.stock <= 0}
               >
                 {product.stock > 0 ? 'Añadir al Carrito' : 'Agotado'}
               </button>
               
-              <button className="flex items-center justify-center p-4 border border-zinc-800 hover:border-[#d4af37] hover:text-[#d4af37] transition-colors group">
+              <button className="flex items-center justify-center p-4 border border-zinc-800 hover:border-primary hover:text-primary transition-colors group">
                 <Icon icon="lucide:heart" width={20} className="group-hover:scale-110 transition-transform" />
               </button>
             </div>

@@ -18,15 +18,15 @@ export default async function CuentaPage() {
     .single();
 
   return (
-    <div className="bg-[#0f0f0f] text-zinc-100 min-h-[calc(100vh-64px)] py-12 px-4">
+    <div className="bg-background text-zinc-100 min-h-[calc(100vh-64px)] py-12 px-4">
       <div className="container mx-auto max-w-4xl">
         <h1 className="font-playfair text-4xl mb-8">Mi Cuenta</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Sidebar */}
-          <div className="bg-[#141414] border border-zinc-800 p-6 flex flex-col gap-4">
+          <div className="bg-card border border-zinc-800 p-6 flex flex-col gap-4">
             <h3 className="uppercase text-xs tracking-widest text-zinc-500 font-bold mb-4">Navegación</h3>
-            <Link href="/cuenta" className="text-[#d4af37] text-sm hover:text-white transition-colors">Mi Perfil</Link>
+            <Link href="/cuenta" className="text-primary text-sm hover:text-white transition-colors">Mi Perfil</Link>
             <Link href="/cuenta/pedidos" className="text-zinc-400 text-sm hover:text-white transition-colors">Mis Pedidos</Link>
             <Link href="/cuenta/direcciones" className="text-zinc-400 text-sm hover:text-white transition-colors">Mis Direcciones</Link>
             
@@ -40,11 +40,11 @@ export default async function CuentaPage() {
           </div>
 
           {/* Main Content */}
-          <div className="md:col-span-2 bg-[#141414] border border-zinc-800 p-8">
+          <div className="md:col-span-2 bg-card border border-zinc-800 p-8">
             <h2 className="font-playfair text-2xl mb-6 flex items-center gap-3">
               Datos Personales
               {profile?.role === 'admin' && (
-                <span className="bg-[#d4af37] text-black text-[10px] uppercase tracking-widest px-2 py-1 font-bold">Admin</span>
+                <span className="bg-primary text-black text-[10px] uppercase tracking-widest px-2 py-1 font-bold">Admin</span>
               )}
             </h2>
             
@@ -65,7 +65,7 @@ export default async function CuentaPage() {
               </div>
             </div>
             
-            <button className="mt-10 border border-zinc-700 px-6 py-3 text-xs uppercase tracking-widest hover:border-[#d4af37] hover:text-[#d4af37] transition-colors">
+            <button className="mt-10 border border-zinc-700 px-6 py-3 text-xs uppercase tracking-widest hover:border-primary hover:text-primary transition-colors">
               Editar Perfil
             </button>
           </div>

@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
+@theme {
+  /* Design System Colors - Adaptado al azul profundo del nuevo logo */
+  --color-background: #04101d;       /* Azul marino profundo (Fondo del león) */
+  --color-foreground: #f4f4f5;       
+  
+  --color-primary: #d4af37;          /* Dorado */
+  --color-primary-foreground: #000000;
+  
+  --color-card: #08182b;             /* Azul marino ligeramente más claro para tarjetas */
+  --color-card-foreground: #f4f4f5;
+  
+  --color-border: #0e2640;           /* Bordes en azul oscuro */
+  
+  --color-muted: #0a1e36;            /* Elementos atenuados */
+  --color-muted-foreground: #8aa4c3; /* Texto secundario con tono azulado */
+  
+  /* Fonts */
+  --font-playfair: "Playfair Display", serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }

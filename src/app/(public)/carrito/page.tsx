@@ -12,7 +12,7 @@ export default function CarritoPage() {
   const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.qty), 0);
 
   return (
-    <div className="bg-[#0f0f0f] text-zinc-100 min-h-screen py-16">
+    <div className="bg-background text-zinc-100 min-h-screen py-16">
       <div className="container mx-auto px-4 max-w-5xl">
         <h1 className="font-playfair text-4xl font-bold mb-10 text-center">Tu Carrito</h1>
         
@@ -30,7 +30,7 @@ export default function CarritoPage() {
               {cartItems.map(item => (
                 <div key={item.id} className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center border-b border-zinc-800/50 pb-8">
                   <div className="col-span-12 sm:col-span-6 flex gap-6 items-center">
-                    <div className="w-24 h-32 bg-[#1a1a1a] shrink-0">
+                    <div className="w-24 h-32 bg-muted shrink-0">
                       <img src={item.image} alt={item.name} className="w-full h-full object-cover opacity-80" />
                     </div>
                     <div>
@@ -70,7 +70,7 @@ export default function CarritoPage() {
 
           {/* RESUMEN DE PAGO */}
           <div className="w-full lg:w-96 shrink-0">
-            <div className="bg-[#141414] border border-zinc-800 p-8">
+            <div className="bg-card border border-zinc-800 p-8">
               <h2 className="font-playfair text-2xl font-bold mb-6">Resumen</h2>
               
               <div className="space-y-4 text-sm font-light text-zinc-300 mb-8 border-b border-zinc-800 pb-8">
@@ -80,7 +80,7 @@ export default function CarritoPage() {
                 </div>
                 <div className="flex justify-between">
                   <span>Envío</span>
-                  <span className="text-[#d4af37]">Gratis</span>
+                  <span className="text-primary">Gratis</span>
                 </div>
               </div>
               
@@ -91,7 +91,7 @@ export default function CarritoPage() {
               
               <Link 
                 href="/checkout"
-                className="w-full bg-white text-black py-4 uppercase tracking-widest text-sm font-bold flex items-center justify-center hover:bg-[#d4af37] hover:text-white transition-colors"
+                className="w-full bg-white text-black py-4 uppercase tracking-widest text-sm font-bold flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
               >
                 Proceder al Checkout
               </Link>

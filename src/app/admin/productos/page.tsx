@@ -24,7 +24,7 @@ export default async function AdminProductosPage() {
     .order('created_at', { ascending: false });
 
   return (
-    <div className="bg-[#0f0f0f] text-zinc-100 min-h-[calc(100vh-64px)] py-12 px-4">
+    <div className="bg-background text-zinc-100 min-h-[calc(100vh-64px)] py-12 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <div>
@@ -34,14 +34,14 @@ export default async function AdminProductosPage() {
             </div>
           </div>
           
-          <Link href="/admin/productos/nuevo" className="bg-[#d4af37] text-black px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+          <Link href="/admin/productos/nuevo" className="bg-primary text-black px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
             + Nuevo Producto
           </Link>
         </div>
 
-        <div className="bg-[#141414] border border-zinc-800 overflow-x-auto">
+        <div className="bg-card border border-zinc-800 overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="bg-[#1a1a1a] text-xs uppercase tracking-widest text-[#d4af37]">
+            <thead className="bg-muted text-xs uppercase tracking-widest text-primary">
               <tr>
                 <th className="px-6 py-4 font-bold border-b border-zinc-800">Producto</th>
                 <th className="px-6 py-4 font-bold border-b border-zinc-800">Marca</th>
@@ -59,7 +59,7 @@ export default async function AdminProductosPage() {
                 </tr>
               ) : (
                 products.map((p) => (
-                  <tr key={p.id} className="hover:bg-[#1a1a1a]/50 transition-colors">
+                  <tr key={p.id} className="hover:bg-muted/50 transition-colors">
                     <td className="px-6 py-4">
                       <p className="text-white font-medium">{p.name}</p>
                       <p className="text-xs text-zinc-500 mt-1">{p.active ? 'Activo' : 'Desactivado'}</p>
@@ -69,7 +69,7 @@ export default async function AdminProductosPage() {
                     <td className="px-6 py-4 text-zinc-300">{p.stock} u.</td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex justify-end gap-3">
-                        <Link href={`/admin/productos/${p.id}/editar`} className="text-xs uppercase tracking-widest text-[#d4af37] hover:text-white transition-colors">
+                        <Link href={`/admin/productos/${p.id}/editar`} className="text-xs uppercase tracking-widest text-primary hover:text-white transition-colors">
                           Editar
                         </Link>
                         <DeleteProductButton productId={p.id} />

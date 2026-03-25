@@ -5,12 +5,12 @@ import Link from "next/link";
 
 export default function CheckoutPage() {
   return (
-    <div className="bg-[#0f0f0f] text-zinc-100 min-h-screen">
+    <div className="bg-background text-zinc-100 min-h-screen">
       
       {/* HEADER SIMPLE (Sin navbar para evitar fuga) */}
-      <header className="border-b border-zinc-800 bg-[#0f0f0f] py-6 text-center">
+      <header className="border-b border-zinc-800 bg-background py-6 text-center">
         <Link href="/" className="font-playfair text-xl font-bold tracking-wider text-white">
-          AURA<span className="text-[#d4af37]">.</span>
+          LYON CALL
         </Link>
       </header>
       
@@ -30,16 +30,16 @@ export default function CheckoutPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="col-span-2">
-                  <input type="email" placeholder="Correo electrónico *" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                  <input type="email" placeholder="Correo electrónico *" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
                 <div>
-                  <input type="text" placeholder="Nombre *" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                  <input type="text" placeholder="Nombre *" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
                 <div>
-                  <input type="text" placeholder="Apellido *" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                  <input type="text" placeholder="Apellido *" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
                 <div className="col-span-2">
-                  <input type="tel" placeholder="Teléfono" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                  <input type="tel" placeholder="Teléfono" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
               </div>
             </section>
@@ -52,13 +52,13 @@ export default function CheckoutPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="col-span-2">
-                  <input type="text" placeholder="Calle y número *" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                  <input type="text" placeholder="Calle y número *" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
                 <div>
-                  <input type="text" placeholder="Ciudad *" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                  <input type="text" placeholder="Ciudad *" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
                 <div>
-                  <input type="text" placeholder="Código Postal *" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                  <input type="text" placeholder="Código Postal *" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
               </div>
             </section>
@@ -69,9 +69,9 @@ export default function CheckoutPage() {
                 <span className="w-6 h-6 rounded-full bg-zinc-800 text-xs flex items-center justify-center">3</span>
                 Método de Pago
               </h2>
-              <div className="bg-[#1a1a1a] border border-zinc-800 p-4 mb-4 flex items-center justify-between cursor-pointer border-[#d4af37]">
+              <div className="bg-muted border border-zinc-800 p-4 mb-4 flex items-center justify-between cursor-pointer border-primary">
                 <div className="flex items-center gap-3">
-                  <div className="w-4 h-4 rounded-full border-4 border-[#d4af37] bg-black"></div>
+                  <div className="w-4 h-4 rounded-full border-4 border-primary bg-black"></div>
                   <span className="text-sm">Tarjeta de Crédito / Débito</span>
                 </div>
                 <div className="flex gap-2">
@@ -79,21 +79,21 @@ export default function CheckoutPage() {
                    <Icon icon="logos:mastercard" width={24} />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4 p-4 border border-t-0 border-zinc-800 bg-[#141414] -mt-4 mb-4 pt-8">
+              <div className="grid grid-cols-2 gap-4 p-4 border border-t-0 border-zinc-800 bg-card -mt-4 mb-4 pt-8">
                 <div className="col-span-2">
-                  <input type="text" placeholder="Número de Tarjeta" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                  <input type="text" placeholder="Número de Tarjeta" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
                 <div>
-                   <input type="text" placeholder="MM/YY" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                   <input type="text" placeholder="MM/YY" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
                 <div>
-                   <input type="text" placeholder="CVC" className="w-full bg-[#1a1a1a] border border-zinc-800 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors" />
+                   <input type="text" placeholder="CVC" className="w-full bg-muted border border-zinc-800 p-3 text-sm focus:border-primary focus:outline-none transition-colors" />
                 </div>
               </div>
               
               <button 
                 type="button"
-                className="w-full bg-white text-black py-4 uppercase tracking-widest text-sm font-bold mt-8 flex items-center justify-center gap-2 hover:bg-[#d4af37] hover:text-white transition-colors"
+                className="w-full bg-white text-black py-4 uppercase tracking-widest text-sm font-bold mt-8 flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors"
                 onClick={(e) => { e.preventDefault(); alert('¡Simulación de compra exitosa!'); }}
               >
                 <Icon icon="lucide:lock" />
@@ -105,7 +105,7 @@ export default function CheckoutPage() {
 
         {/* RESUMEN DE LA ORDEN */}
         <div className="w-full lg:w-[400px] shrink-0">
-          <div className="bg-[#141414] border border-zinc-800 p-6 sticky top-8">
+          <div className="bg-card border border-zinc-800 p-6 sticky top-8">
             <h2 className="font-playfair text-xl font-bold mb-6">En tu carrito</h2>
             
             <div className="flex flex-col gap-4 mb-6 border-b border-zinc-800 pb-6">
@@ -114,7 +114,7 @@ export default function CheckoutPage() {
                 { name: "Velvet Rose", size: "50ml", price: 95, qty: 2, img: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80" }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4 items-center">
-                  <div className="w-16 h-20 bg-[#1a1a1a] shrink-0">
+                  <div className="w-16 h-20 bg-muted shrink-0">
                     <img src={item.img} className="w-full h-full object-cover opacity-80" />
                   </div>
                   <div className="flex-1">
@@ -135,7 +135,7 @@ export default function CheckoutPage() {
               </div>
               <div className="flex justify-between">
                 <span>Envío</span>
-                <span className="text-[#d4af37]">Gratis</span>
+                <span className="text-primary">Gratis</span>
               </div>
             </div>
             

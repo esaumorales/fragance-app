@@ -17,7 +17,7 @@ export default async function NuevoProductoPage() {
   const { data: categories } = await supabase.from('categories').select('id, name');
 
   return (
-    <div className="bg-[#0f0f0f] text-zinc-100 min-h-[calc(100vh-64px)] py-12 px-4">
+    <div className="bg-background text-zinc-100 min-h-[calc(100vh-64px)] py-12 px-4">
       <div className="container mx-auto max-w-3xl">
         <div className="flex justify-between items-center mb-8">
           <div>
@@ -28,7 +28,7 @@ export default async function NuevoProductoPage() {
           </div>
         </div>
 
-        <div className="bg-[#141414] border border-zinc-800 p-8">
+        <div className="bg-card border border-zinc-800 p-8">
           <ProductForm brands={brands || []} categories={categories || []} />
         </div>
       </div>

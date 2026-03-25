@@ -14,9 +14,9 @@ interface ProductCardProps {
 export default function ProductCard({ id, slug, name, brand, price, image, isNew }: ProductCardProps) {
   return (
     <div className="group cursor-pointer flex flex-col w-full">
-      <div className="relative aspect-[3/4] overflow-hidden bg-[#1a1a1a] mb-6">
+      <div className="relative aspect-[3/4] overflow-hidden bg-muted mb-6">
         {isNew && (
-          <div className="absolute top-3 left-3 z-20 bg-[#d4af37] text-black text-[10px] uppercase font-bold tracking-widest px-2 py-1">
+          <div className="absolute top-3 left-3 z-20 bg-primary text-black text-[10px] uppercase font-bold tracking-widest px-2 py-1">
             Nuevo
           </div>
         )}
@@ -29,7 +29,7 @@ export default function ProductCard({ id, slug, name, brand, price, image, isNew
         
         {/* Quick Add Button */}
         <div className="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
-          <button className="w-full bg-white text-black uppercase text-xs tracking-widest font-bold py-3 hover:bg-[#d4af37] hover:text-white transition-colors flex items-center justify-center gap-2">
+          <button className="w-full bg-white text-black uppercase text-xs tracking-widest font-bold py-3 hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
             <Icon icon="lucide:shopping-bag" width={16} />
             Añadir
           </button>
@@ -37,9 +37,9 @@ export default function ProductCard({ id, slug, name, brand, price, image, isNew
       </div>
       
       <div className="text-center relative">
-        <p className="text-[#d4af37] text-xs uppercase tracking-widest mb-1">{brand}</p>
+        <p className="text-primary text-xs uppercase tracking-widest mb-1">{brand}</p>
         <Link href={`/perfumes/${slug}`}>
-          <h3 className="font-playfair text-lg mb-1 hover:text-[#d4af37] transition-colors">{name}</h3>
+          <h3 className="font-playfair text-lg mb-1 hover:text-primary transition-colors">{name}</h3>
         </Link>
         <p className="text-zinc-400 font-light text-sm">${price.toFixed(2)}</p>
       </div>

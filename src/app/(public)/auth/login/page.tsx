@@ -43,11 +43,11 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="bg-[#0f0f0f] text-zinc-100 min-h-[calc(100vh-64px)] flex items-center justify-center py-12 px-4">
-      <div className="w-full max-w-md bg-[#141414] border border-zinc-800 p-8 sm:p-12 shadow-2xl">
+    <div className="bg-background text-zinc-100 min-h-[calc(100vh-64px)] flex items-center justify-center py-12 px-4">
+      <div className="w-full max-w-md bg-card border border-zinc-800 p-8 sm:p-12 shadow-2xl">
         <div className="text-center mb-10">
           <Link href="/" className="font-playfair text-2xl font-bold tracking-wider text-white inline-block mb-6">
-            AURA<span className="text-[#d4af37]">.</span>
+            LYON CALL
           </Link>
           <h1 className="font-playfair text-3xl mb-3">Bienvenido</h1>
           <p className="text-zinc-400 font-light text-sm">
@@ -75,7 +75,7 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 placeholder="tu@email.com" 
-                className="w-full bg-[#1a1a1a] border border-zinc-800 pl-10 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors text-white" 
+                className="w-full bg-muted border border-zinc-800 pl-10 p-3 text-sm focus:border-primary focus:outline-none transition-colors text-white" 
               />
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function LoginPage() {
               <label className="block text-xs uppercase tracking-widest text-zinc-500 font-bold" htmlFor="password">
                 Contraseña
               </label>
-              <Link href="/auth/forgot-password" className="text-xs text-zinc-500 hover:text-[#d4af37] transition-colors">
+              <Link href="/auth/forgot-password" className="text-xs text-zinc-500 hover:text-primary transition-colors">
                 ¿La olvidaste?
               </Link>
             </div>
@@ -98,7 +98,7 @@ export default function LoginPage() {
                 required
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••" 
-                className="w-full bg-[#1a1a1a] border border-zinc-800 pl-10 p-3 text-sm focus:border-[#d4af37] focus:outline-none transition-colors text-white" 
+                className="w-full bg-muted border border-zinc-800 pl-10 p-3 text-sm focus:border-primary focus:outline-none transition-colors text-white" 
               />
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function LoginPage() {
           <button 
             type="submit"
             disabled={isLoading}
-            className="w-full bg-white text-black py-4 uppercase tracking-widest text-sm font-bold flex items-center justify-center gap-2 hover:bg-[#d4af37] hover:text-white transition-colors mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-white text-black py-4 uppercase tracking-widest text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? "Iniciando..." : "Iniciar Sesión"}
           </button>
@@ -114,7 +114,7 @@ export default function LoginPage() {
 
         <div className="mt-10 pt-6 border-t border-zinc-800 text-center text-sm text-zinc-400 font-light">
           ¿Aún no tienes una firma olfativa?{" "}
-          <Link href="/auth/register" className="text-white hover:text-[#d4af37] font-medium transition-colors">
+          <Link href="/auth/register" className="text-white hover:text-primary font-medium transition-colors">
             Crear cuenta
           </Link>
         </div>
