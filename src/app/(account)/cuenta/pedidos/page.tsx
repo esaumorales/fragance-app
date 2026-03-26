@@ -46,7 +46,7 @@ export default async function PedidosPage() {
                     </p>
                   </div>
                   <div className="flex flex-col md:items-end gap-2">
-                    <span className="text-white text-lg font-playfair">${order.total}</span>
+                    <span className="text-white text-lg font-playfair">S/ {order.total}</span>
                     <span className="bg-muted px-3 py-1 text-xs uppercase tracking-widest text-zinc-400">
                       {order.status}
                     </span>

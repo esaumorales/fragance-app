@@ -45,7 +45,7 @@ export default function Footer() {
             </li>
             <li className="flex gap-3 items-start">
               <Icon icon="lucide:truck" className="text-primary shrink-0 mt-0.5" width={18} />
-              <span>Envío Gratis en compras mayores a $100.</span>
+              <span>Envío Gratis en compras mayores a S/ 100.</span>
             </li>
           </ul>
         </div>

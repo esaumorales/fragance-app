@@ -97,7 +97,7 @@ export default function CheckoutPage() {
                 onClick={(e) => { e.preventDefault(); alert('¡Simulación de compra exitosa!'); }}
               >
                 <Icon icon="lucide:lock" />
-                Pagar $310.00
+                Pagar S/ 310.00
               </button>
             </section>
           </form>
@@ -122,7 +122,7 @@ export default function CheckoutPage() {
                     <p className="text-zinc-500 text-xs">Cant: {item.qty} | {item.size}</p>
                   </div>
                   <div className="font-medium text-sm">
-                    ${(item.price * item.qty).toFixed(2)}
+                    S/ {(item.price * item.qty).toFixed(2)}
                   </div>
                 </div>
               ))}
@@ -131,7 +131,7 @@ export default function CheckoutPage() {
             <div className="space-y-3 text-sm font-light text-zinc-300 mb-6">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span>$310.00</span>
+                <span>S/ 310.00</span>
               </div>
               <div className="flex justify-between">
                 <span>Envío</span>
@@ -141,7 +141,7 @@ export default function CheckoutPage() {
             
             <div className="flex justify-between items-end border-t border-zinc-800 pt-4">
               <span className="text-base font-medium">Total a pagar</span>
-              <span className="text-2xl font-bold font-playfair text-white">$310.00</span>
+              <span className="text-2xl font-bold font-playfair text-white">S/ 310.00</span>
             </div>
           </div>
         </div>

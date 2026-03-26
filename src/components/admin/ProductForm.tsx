@@ -142,7 +142,7 @@ export default function ProductForm({ brands, categories, initialData }: { brand
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
-          <label className="block text-xs uppercase tracking-widest text-zinc-500 font-bold mb-2">Precio ($)</label>
+          <label className="block text-xs uppercase tracking-widest text-zinc-500 font-bold mb-2">Precio (S/)</label>
           <input required defaultValue={initialData?.price} name="price" type="number" step="0.01" className="w-full bg-background border border-zinc-800 px-4 py-3 text-sm text-white focus:outline-none focus:border-primary/50" />
         </div>
         <div>

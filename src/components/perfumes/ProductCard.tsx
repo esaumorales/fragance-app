@@ -55,7 +55,7 @@ export default function ProductCard({ id, slug, name, brand, price, image, isNew
         <Link href={`/perfumes/${slug}`}>
           <h3 className="font-playfair text-lg mb-1 hover:text-primary transition-colors">{name}</h3>
         </Link>
-        <p className="text-zinc-400 font-light text-sm">${price.toFixed(2)}</p>
+        <p className="text-zinc-400 font-light text-sm">S/ {price.toFixed(2)}</p>
       </div>
     </div>
   );

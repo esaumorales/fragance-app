@@ -71,7 +71,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             
             <h1 className="font-playfair text-4xl lg:text-6xl mb-6">{product.name}</h1>
             
-            <div className="text-2xl font-light mb-8">${Number(product.price).toFixed(2)}</div>
+            <div className="text-2xl font-light mb-8">S/ {Number(product.price).toFixed(2)}</div>
             
             <p className="text-zinc-400 font-light leading-relaxed mb-10 text-sm">
               {product.description}
@@ -105,7 +105,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <div className="mt-12 space-y-4">
               <div className="flex items-center gap-3 text-xs text-zinc-500">
                 <Icon icon="lucide:truck" width={16} />
-                <span className="font-light">Envío premium gratis en pedidos superiores a $200.</span>
+                <span className="font-light">Envío premium gratis en pedidos superiores a S/ 200.</span>
               </div>
               <div className="flex items-center gap-3 text-xs text-zinc-500">
                 <Icon icon="lucide:shield-check" width={16} />

@@ -63,7 +63,7 @@ export default async function AdminPedidosPage() {
                       <p className="text-white">{o.addresses?.recipient_name || 'N/A'}</p>
                       <p className="text-zinc-500 text-xs mt-1">{o.addresses?.city}</p>
                     </td>
-                    <td className="px-6 py-4 font-playfair text-lg text-primary tracking-wider">${o.total}</td>
+                    <td className="px-6 py-4 font-playfair text-lg text-primary tracking-wider">S/ {o.total}</td>
                     <td className="px-6 py-4">
                       <span className={`px-2 py-1 text-[10px] uppercase font-bold tracking-widest ${
                         o.status === 'delivered' ? 'bg-green-950/40 text-green-500 border border-green-900/50' :

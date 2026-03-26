@@ -69,7 +69,7 @@ export default function CarritoPage() {
                     </div>
                     
                     <div className="col-span-4 sm:col-span-2 text-left sm:text-center text-zinc-300 font-light hidden sm:block">
-                      ${item.price.toFixed(2)}
+                      S/ {item.price.toFixed(2)}
                     </div>
                     
                     <div className="col-span-12 sm:col-span-2 flex justify-start sm:justify-center">
@@ -93,13 +93,13 @@ export default function CarritoPage() {
                     </div>
                     
                     <div className="col-span-12 sm:col-span-2 text-right font-medium text-lg hidden sm:block">
-                      ${(item.price * item.qty).toFixed(2)}
+                      S/ {(item.price * item.qty).toFixed(2)}
                     </div>
                     
                     {/* Resumen Móvil */}
                     <div className="col-span-12 flex justify-between items-center sm:hidden mt-2">
-                      <span className="text-zinc-400 font-light">${item.price.toFixed(2)} c/u</span>
-                      <span className="font-medium text-lg">${(item.price * item.qty).toFixed(2)}</span>
+                      <span className="text-zinc-400 font-light">S/ {item.price.toFixed(2)} c/u</span>
+                      <span className="font-medium text-lg">S/ {(item.price * item.qty).toFixed(2)}</span>
                     </div>
                   </div>
                 ))}
@@ -114,7 +114,7 @@ export default function CarritoPage() {
                 <div className="space-y-4 text-sm font-light text-zinc-300 mb-8 border-b border-zinc-800 pb-8">
                   <div className="flex justify-between">
                     <span>Subtotal</span>
-                    <span>${cartTotal.toFixed(2)}</span>
+                    <span>S/ {cartTotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Envío</span>
@@ -124,7 +124,7 @@ export default function CarritoPage() {
                 
                 <div className="flex justify-between items-end mb-8">
                   <span className="text-lg font-medium">Total</span>
-                  <span className="text-2xl font-bold font-playfair">${cartTotal.toFixed(2)}</span>
+                  <span className="text-2xl font-bold font-playfair">S/ {cartTotal.toFixed(2)}</span>
                 </div>
                 
                 <Link 

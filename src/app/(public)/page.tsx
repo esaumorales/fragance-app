@@ -137,7 +137,7 @@ export default function Home() {
               <div className="text-center">
                 <p className="text-primary text-xs uppercase tracking-widest mb-1">{product.brand}</p>
                 <h3 className="font-playfair text-xl mb-2">{product.name}</h3>
-                <p className="text-zinc-400 font-light">${product.price.toFixed(2)}</p>
+                <p className="text-zinc-400 font-light">S/ {product.price.toFixed(2)}</p>
               </div>
             </motion.div>
           ))}
@@ -161,7 +161,7 @@ export default function Home() {
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
             { icon: "lucide:award", title: "100% Originales", desc: "Garantizamos la autenticidad de cada frasco que llega a tus manos." },
-            { icon: "lucide:truck", title: "Envío Rápido", desc: "Entrega express gratuita en pedidos superiores a $100." },
+            { icon: "lucide:truck", title: "Envío Rápido", desc: "Entrega express gratuita en pedidos superiores a S/ 100." },
             { icon: "lucide:refresh-ccw", title: "Garantía de Autor", desc: "Devoluciones sin costo si el aroma no conecta contigo." }
           ].map((benefit, idx) => (
             <motion.div 

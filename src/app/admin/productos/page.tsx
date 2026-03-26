@@ -65,7 +65,7 @@ export default async function AdminProductosPage() {
                       <p className="text-xs text-zinc-500 mt-1">{p.active ? 'Activo' : 'Desactivado'}</p>
                     </td>
                     <td className="px-6 py-4 text-zinc-300">{p.brands?.name || 'N/A'}</td>
-                    <td className="px-6 py-4 font-playfair tracking-wider">${p.price}</td>
+                    <td className="px-6 py-4 font-playfair tracking-wider">S/ {p.price}</td>
                     <td className="px-6 py-4 text-zinc-300">{p.stock} u.</td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex justify-end gap-3">
